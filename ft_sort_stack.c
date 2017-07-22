@@ -12,31 +12,6 @@
 
 #include "push_swap.h"
 
-static void		ft_final_pushes_in_a(t_que *stacks)
-{
-	int			ss;
-
-	ss = 0;
-	if (stacks->a[0] > stacks->a[1] && stacks->b[0] < stacks->b[1])
-	{
-		ft_interpret(stacks, "ss");
-		write(1, "ss\n", 3);
-		ss = 1;
-	}
-	else if (stacks->a[0] > stacks->a[1])
-	{
-		ft_interpret(stacks, "sa");
-		write(1, "sa\n", 3);
-	}
-	if (ss == 0 && stacks->b[0] < stacks->b[1])
-	{
-		ft_interpret(stacks, "sb");
-		write(1, "sb\n", 3);
-	}
-	ft_interpret(stacks, "pa");
-	write(1, "pa\n", 3);
-}
-
 static void		ft_sort_first_three_in_b(t_que *stacks)
 {
 	if (stacks->b[0] > stacks->b[1] && stacks->b[1] < stacks->b[2])
@@ -71,7 +46,7 @@ static void		ft_only_three_nbs(t_que *stacks)
 	}
 	else if (stacks->a[1] < stacks->a[2] && stacks->a[0] > stacks->a[2])
 	{
-		ft_interpret(stacks, "rr");
+		ft_interpret(stacks, "ra");
 		write(1, "ra\n", 3);
 	}
 	else if (stacks->a[1] < stacks->a[2] && stacks->a[0] < stacks->a[2])
@@ -124,13 +99,12 @@ void			ft_sort_stack(int *a, int len)
 		ft_only_three_nbs(&stacks);
 	while (stacks.ea > 2 && stacks.eb < 3)
 		ft_push_min_in_b(&stacks);
-	ft_sort_first_three_in_b(&stacks);
+	if (stacks.eb == 3)
+		ft_sort_first_three_in_b(&stacks);
 	while (stacks.ea > 2)
 		ft_simultaneous_sort(&stacks);
-	while (stacks.eb > 3)
-		ft_empty_b_while_sorting(&stacks);
 	while (stacks.eb > 0)
-		ft_final_pushes_in_a(&stacks);
+		ft_empty_b_while_sorting(&stacks);
 	if (stacks.a[0] > stacks.a[1])
 	{
 		ft_interpret(&stacks, "sa");

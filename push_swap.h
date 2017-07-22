@@ -41,6 +41,7 @@ void		ft_swap_stacks(int end, int *a, int *b);
 void		ft_sort_stack(int *a, int len);
 void		ft_empty_b_while_sorting(t_que *stacks);
 void		ft_push_min_in_b(t_que *stacks);
+void		ft_place_max_at_bottom_of_a(t_que *stacks);
 void		ft_simultaneous_sort(t_que *stacks);
 void		ft_push(t_que *stacks, char *line);
 void		ft_rotate(t_que *stacks, char *line);
