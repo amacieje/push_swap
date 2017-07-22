@@ -99,7 +99,9 @@ void			ft_sort_stack(int *a, int len)
 		ft_only_three_nbs(&stacks);
 	while (stacks.ea > 2 && stacks.eb < 3)
 		ft_push_min_in_b(&stacks);
-	if (stacks.eb == 3)
+	if (stacks.eb == 3 && stacks.ea == 2)
+		ft_simultaneous_sort(&stacks);
+	else if (stacks.eb == 3)
 		ft_sort_first_three_in_b(&stacks);
 	while (stacks.ea > 2)
 		ft_simultaneous_sort(&stacks);

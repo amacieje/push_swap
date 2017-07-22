@@ -164,5 +164,6 @@ void		ft_simultaneous_sort(t_que *stacks)
 		ft_interpret(stacks, "rrb");
 		write(1, "rrb\n", 4);
 	}
-	ft_push_and_sort_b_using_a(stacks);
+	if (stacks->ea > 2)
+		ft_push_and_sort_b_using_a(stacks);
 }
