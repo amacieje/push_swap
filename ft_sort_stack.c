@@ -6,7 +6,7 @@
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/18 12:03:25 by amacieje          #+#    #+#             */
-/*   Updated: 2017/07/20 15:44:22 by amacieje         ###   ########.fr       */
+/*   Updated: 2017/07/26 11:45:19 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,32 +34,6 @@ static void		ft_sort_first_three_in_b(t_que *stacks)
 	{
 		ft_interpret(stacks, "rrb");
 		write(1, "rrb\n", 4);
-	}
-}
-
-static void		ft_only_three_nbs(t_que *stacks)
-{
-	if (stacks->a[0] < stacks->a[1])
-	{
-		ft_interpret(stacks, "rra");
-		write(1, "rra\n", 4);
-	}
-	else if (stacks->a[1] < stacks->a[2] && stacks->a[0] > stacks->a[2])
-	{
-		ft_interpret(stacks, "ra");
-		write(1, "ra\n", 3);
-	}
-	else if (stacks->a[1] < stacks->a[2] && stacks->a[0] < stacks->a[2])
-	{
-		ft_interpret(stacks, "sa");
-		write(1, "sa\n", 3);
-	}
-	else
-	{
-		ft_interpret(stacks, "sa");
-		write(1, "sa\n", 3);
-		ft_interpret(stacks, "rra");
-		write(1, "rra\n", 4);
 	}
 }
 
@@ -103,7 +77,7 @@ void			ft_sort_stack(int *a, int len)
 		ft_simultaneous_sort(&stacks);
 	else if (stacks.eb == 3)
 		ft_sort_first_three_in_b(&stacks);
-	while (stacks.ea > 2)
+	while (stacks.ea > 2 && stacks.eb > 0)
 		ft_simultaneous_sort(&stacks);
 	while (stacks.eb > 0)
 		ft_empty_b_while_sorting(&stacks);

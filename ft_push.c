@@ -6,7 +6,7 @@
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/17 16:25:03 by amacieje          #+#    #+#             */
-/*   Updated: 2017/07/20 12:13:11 by amacieje         ###   ########.fr       */
+/*   Updated: 2017/07/27 11:45:17 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static void		ft_push_in_b(t_que *stacks)
 	int			tmp;
 	int			i;
 
+	tmp = 0;
 	if (stacks->eb != 0)
 		tmp = stacks->b[0];
 	stacks->b[0] = stacks->a[0];
@@ -39,6 +40,7 @@ static void		ft_push_in_a(t_que *stacks)
 	int			tmp;
 	int			i;
 
+	tmp = 0;
 	stacks->ea++;
 	if (stacks->ea > 0)
 		tmp = stacks->a[0];

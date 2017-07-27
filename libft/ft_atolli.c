@@ -6,20 +6,21 @@
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/17 16:06:15 by amacieje          #+#    #+#             */
-/*   Updated: 2017/07/20 12:32:41 by amacieje         ###   ########.fr       */
+/*   Updated: 2017/07/27 17:14:54 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <limits.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 static int			ft_int_max_lenght(void)
 {
 	char			*intmax;
 	int				len;
+	int				i;
 
+	i = 0;
 	intmax = ft_longitoa(INT_MAX);
 	len = ft_strlen(intmax);
 	free(intmax);

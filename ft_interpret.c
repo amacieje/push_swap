@@ -6,7 +6,7 @@
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/18 11:29:27 by amacieje          #+#    #+#             */
-/*   Updated: 2017/07/18 12:24:46 by amacieje         ###   ########.fr       */
+/*   Updated: 2017/07/27 17:23:01 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ int			ft_interpret(t_que *stacks, char *line)
 		ft_reverse(stacks, line);
 	else
 	{
-		free(stacks->b);
+		if (stacks && stacks->b)
+			free(stacks->b);
 		return (-1);
 	}
 	return (0);

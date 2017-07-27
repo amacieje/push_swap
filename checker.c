@@ -6,7 +6,7 @@
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/13 11:10:19 by amacieje          #+#    #+#             */
-/*   Updated: 2017/07/18 12:24:35 by amacieje         ###   ########.fr       */
+/*   Updated: 2017/07/27 17:27:20 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ int				main(int argc, char **argv)
 		return (0);
 	else if (argc > 2)
 	{
-		i = 1;
-		while (argv[++i])
+		i = 0;
+		while (++i < argc)
 			if (ft_conformity(argv[i]) < 0)
 				return (0);
-		if (!(a = (int *)malloc(sizeof(int) * --i)))
+		if (!(a = (int *)malloc(sizeof(int) * (unsigned int)--i)))
 			exit(-1);
 		k = i - 1;
 		while (--i >= 0)
@@ -36,8 +36,7 @@ int				main(int argc, char **argv)
 	}
 	if (ft_check_doubles(a, k) <= 0)
 		return (0);
-	if (ft_check_sorting(a, k) == 0)
-		write(1, "OK\n", 3);
+	ft_check_sorting(a, k);
 	free(a);
 	return (0);
 }

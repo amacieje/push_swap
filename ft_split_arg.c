@@ -6,7 +6,7 @@
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/18 11:42:16 by amacieje          #+#    #+#             */
-/*   Updated: 2017/07/18 11:43:21 by amacieje         ###   ########.fr       */
+/*   Updated: 2017/07/27 11:43:27 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int				*ft_split_arg(char *str, int *k)
 	i = 0;
 	while (s[i])
 		i++;
-	if (!(a = (int*)malloc(sizeof(int) * i)))
+	if (!(a = (int*)malloc(sizeof(int) * (unsigned int)i)))
 		exit(-1);
 	*k = i - 1;
 	i = -1;

@@ -6,7 +6,7 @@
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 11:57:09 by amacieje          #+#    #+#             */
-/*   Updated: 2017/07/20 12:07:16 by amacieje         ###   ########.fr       */
+/*   Updated: 2017/07/26 14:42:06 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void		ft_empty_b_while_sorting(t_que *stacks)
 {
 	ft_place_max_at_bottom_of_a(stacks);
 	if (stacks->a[0] < stacks->b[0])
-	{	
+	{
 		ft_interpret(stacks, "ra");
 		write(1, "ra\n", 3);
 		while (stacks->eb > 0
