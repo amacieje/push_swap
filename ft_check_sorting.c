@@ -6,7 +6,7 @@
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 15:08:12 by amacieje          #+#    #+#             */
-/*   Updated: 2017/07/27 17:29:17 by amacieje         ###   ########.fr       */
+/*   Updated: 2017/07/31 13:22:48 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,18 @@ static int			ft_final_check(t_que *stacks, int len)
 	return (0);
 }
 
+static int			ft_check_line(t_que *stacks, char *line)
+{
+	if (ft_interpret(stacks, line) < 0)
+	{
+		free(line);
+		write(1, "Error\n", 6);
+		return (-1);
+	}
+	free(line);
+	return (0);
+}
+
 int					ft_check_sorting(int *a, int len)
 {
 	t_que			stacks;
@@ -40,15 +52,8 @@ int					ft_check_sorting(int *a, int len)
 		exit(-1);
 	ft_init_stacks(&stacks, a, b, len);
 	while (get_next_line(0, &line) > 0)
-	{
-		if (ft_interpret(&stacks, line) < 0)
-		{
-			free(line);
-			write(1, "Error\n", 6);
+		if (ft_check_line(&stacks, line) < 0)
 			return (-1);
-		}
-		free(line);
-	}
 	free(line);
 	if (ft_final_check(&stacks, len) < 0)
 	{

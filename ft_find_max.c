@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_stacks.c                                   :+:      :+:    :+:   */
+/*   ft_find_max.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/18 12:11:35 by amacieje          #+#    #+#             */
-/*   Updated: 2017/07/31 11:07:43 by amacieje         ###   ########.fr       */
+/*   Created: 2017/08/09 16:14:31 by amacieje          #+#    #+#             */
+/*   Updated: 2017/08/09 16:15:28 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_init_stacks(t_que *stacks, int *a, int *b, int len)
+int				ft_find_max(int *tab, int end)
 {
-	stacks->a = a;
-	stacks->b = b;
-	stacks->len = len;
-	stacks->ea = len;
-	stacks->eb = 0;
+	int			k;
+	int			max;
+
+	max = tab[0];
+	k = 0;
+	while (++k <= end)
+		if (tab[k] > max)
+			max = tab[k];
+	return (max);
 }

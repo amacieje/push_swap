@@ -6,13 +6,13 @@
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/12 13:38:19 by amacieje          #+#    #+#             */
-/*   Updated: 2017/07/18 12:24:41 by amacieje         ###   ########.fr       */
+/*   Updated: 2017/08/08 15:44:08 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		main(int argc, char **argv)
+int				main(int argc, char **argv)
 {
 	int			*a;
 	int			i;
@@ -36,7 +36,7 @@ int		main(int argc, char **argv)
 	}
 	if (ft_check_doubles(a, k) <= 0)
 		return (0);
-	ft_sort_stack(a, k);
+	ft_quick_sort_stack(a, k);
 	free(a);
 	return (0);
 }

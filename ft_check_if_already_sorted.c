@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_stacks.c                                   :+:      :+:    :+:   */
+/*   ft_check_if_already_sorted.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/18 12:11:35 by amacieje          #+#    #+#             */
-/*   Updated: 2017/07/31 11:07:43 by amacieje         ###   ########.fr       */
+/*   Created: 2017/08/03 11:30:51 by amacieje          #+#    #+#             */
+/*   Updated: 2017/08/03 11:32:29 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_init_stacks(t_que *stacks, int *a, int *b, int len)
+void			ft_check_if_already_sorted(t_que *stacks, int *len)
 {
-	stacks->a = a;
-	stacks->b = b;
-	stacks->len = len;
-	stacks->ea = len;
-	stacks->eb = 0;
+	int			*a;
+	int			i;
+	int			sorted;
+
+	sorted = 1;
+	a = stacks->a;
+	i = 0;
+	while (i < *len)
+	{
+		if (a[i] > a[i + 1])
+			sorted = 0;
+		i++;
+	}
+	if (sorted == 1)
+	{
+		*len = 0;
+		stacks->ea = 0;
+		stacks->len = 0;
+	}
 }

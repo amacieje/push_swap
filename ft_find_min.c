@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_stacks.c                                   :+:      :+:    :+:   */
+/*   ft_find_min.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/18 12:11:35 by amacieje          #+#    #+#             */
-/*   Updated: 2017/07/31 11:07:43 by amacieje         ###   ########.fr       */
+/*   Created: 2017/08/09 16:16:59 by amacieje          #+#    #+#             */
+/*   Updated: 2017/08/09 16:17:02 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_init_stacks(t_que *stacks, int *a, int *b, int len)
+int				ft_find_min(int *tab, int end)
 {
-	stacks->a = a;
-	stacks->b = b;
-	stacks->len = len;
-	stacks->ea = len;
-	stacks->eb = 0;
+	int			k;
+	int			min;
+
+	min = tab[0];
+	k = 0;
+	while (++k <= end)
+		if (tab[k] < min)
+			min = tab[k];
+	return (min);
 }

@@ -6,7 +6,7 @@
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/12 10:25:20 by amacieje          #+#    #+#             */
-/*   Updated: 2017/07/27 11:38:35 by amacieje         ###   ########.fr       */
+/*   Updated: 2017/08/09 16:23:54 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,17 @@ void				ft_push(t_que *stacks, char *line);
 void				ft_rotate(t_que *stacks, char *line);
 void				ft_reverse(t_que *stacks, char *line);
 int					get_next_line(const int fd, char **line);
+
+void				ft_pre_sort(t_que *stacks);
+void				ft_check_if_already_sorted(t_que *stacks, int *len);
+void				ft_sort_first_three_in_b(t_que *stacks);
+void				ft_quick_sort_stack(int *a, int len);
+void				ft_quick_sort(t_que *stacks);
+void				ft_quick_sort_b(t_que *stacks);
+int					ft_find_max(int *tab, int end);
+int					ft_find_min(int *tab, int end);
+int					ft_find_pivot(int *tab, int end);
+int					ft_a_non_sorted(t_que *stacks);
+int					ft_b_non_sorted(t_que *stacks);
 
 #endif

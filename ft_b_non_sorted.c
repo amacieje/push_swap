@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_stacks.c                                   :+:      :+:    :+:   */
+/*   ft_b_non_sorted.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/18 12:11:35 by amacieje          #+#    #+#             */
-/*   Updated: 2017/07/31 11:07:43 by amacieje         ###   ########.fr       */
+/*   Created: 2017/08/08 12:14:56 by amacieje          #+#    #+#             */
+/*   Updated: 2017/08/10 12:03:20 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_init_stacks(t_que *stacks, int *a, int *b, int len)
+int			ft_b_non_sorted(t_que *stacks)
 {
-	stacks->a = a;
-	stacks->b = b;
-	stacks->len = len;
-	stacks->ea = len;
-	stacks->eb = 0;
+	int		*b;
+	int		i;
+	
+	if (stacks->eb > 1)
+	{
+		b = stacks->b;
+		i = 0;
+		while (i < stacks->eb - 1)
+		{
+			if (b[i] < b[i + 1])
+				return (-1);
+			i++;
+		}
+	}
+	return (0);
 }
