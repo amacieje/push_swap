@@ -6,7 +6,7 @@
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/18 12:11:35 by amacieje          #+#    #+#             */
-/*   Updated: 2017/07/31 11:07:43 by amacieje         ###   ########.fr       */
+/*   Updated: 2017/08/14 11:54:44 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,5 @@ void	ft_init_stacks(t_que *stacks, int *a, int *b, int len)
 	stacks->len = len;
 	stacks->ea = len;
 	stacks->eb = 0;
+	stacks->padding = 0;
 }

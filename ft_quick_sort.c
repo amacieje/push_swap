@@ -6,7 +6,7 @@
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/07 16:45:22 by amacieje          #+#    #+#             */
-/*   Updated: 2017/08/10 18:15:40 by amacieje         ###   ########.fr       */
+/*   Updated: 2017/08/14 16:39:40 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,6 @@ static void			ft_push_in_b(t_que *stacks)
 		ft_interpret(stacks, "sb");
 		write(1, "sb\n", 3);
 	}
-/*	else
-	{
-		ft_interpret(stacks, "sa");
-		write(1, "sa\n", 3);
-	}*/
 	ft_interpret(stacks, "pb");
 	write(1, "pb\n", 3);
 }
@@ -43,11 +38,6 @@ static void			ft_place_max_at_bottom(t_que *stacks)
 		ft_interpret(stacks, "sb");
 		write(1, "sb\n", 3);
 	}
-/*	else
-	{
-		ft_interpret(stacks, "sa");
-		write(1, "sa\n", 3);
-	}*/
 	if (stacks->eb > 1 && stacks->b[0] == ft_find_min(stacks->b, stacks->eb - 1))
 	{
 		ft_interpret(stacks, "rr");
@@ -64,7 +54,6 @@ void				ft_quick_sort(t_que *stacks)
 {
 	int				pivot;
 
-//	ft_pre_sort(stacks);
 	pivot = stacks->a[ft_find_pivot(stacks->a, stacks->ea)];
 	while (stacks->ea > 2 && ft_a_non_sorted(stacks) == -1
 	&& stacks->a[0] != ft_find_min(stacks->a, stacks->ea))

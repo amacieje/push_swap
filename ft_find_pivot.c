@@ -6,7 +6,7 @@
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 15:11:04 by amacieje          #+#    #+#             */
-/*   Updated: 2017/08/10 17:46:14 by amacieje         ###   ########.fr       */
+/*   Updated: 2017/08/17 17:25:56 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int				ft_find_pivot(int *tab, int end)
 {
-/*	int			*scores;
+	int			*scores;
 	int			i;
 	int			k;
 	int			less;
@@ -33,10 +33,10 @@ int				ft_find_pivot(int *tab, int end)
 	}
 	i = -1;
 	while (++i <= end)
-		if (scores[i] == (end + 1) / 2)
+		if (scores[i] == ((end + 1) / 8 + (end + 1) % 8) % (end + 1))
 			return (i);
-	return (0);*/
-	int			average;
+	return (0);
+/*	int			average;
 	int			i;
 
 	average = (ft_find_min(tab, end) + ft_find_max(tab, end)) / 2; 
@@ -55,5 +55,10 @@ int				ft_find_pivot(int *tab, int end)
 	}
 	if (tab[i] == average)
 		return (i);
-	return (-1);
+	return (-1);*/
+/*	tab[0] = tab[0];
+	if (end > 30)
+		return ((end / 8 + end % 8) % end);
+	return ((end / 1 + end % 1) % end);
+//	return (tab[(end / 29 + end % 29) % end]);*/
 }

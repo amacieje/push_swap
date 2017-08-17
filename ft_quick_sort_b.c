@@ -6,7 +6,7 @@
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/08 12:10:43 by amacieje          #+#    #+#             */
-/*   Updated: 2017/08/11 14:30:20 by amacieje         ###   ########.fr       */
+/*   Updated: 2017/08/17 12:59:41 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void		ft_swap_and_rotate_b(t_que *stacks)
 static void		ft_push_in_a(t_que *stacks, int *pivot)
 {
 	int			ss;
-	int			ra;
+//	int			ra;
 
 	ss = 0;
 	if (stacks->a[0] > stacks->a[1] && stacks->b[0] < stacks->b[1])
@@ -50,26 +50,34 @@ static void		ft_push_in_a(t_que *stacks, int *pivot)
 		ft_interpret(stacks, "sb");
 		write(1, "sb\n", 3);
 	}
-	ra = 0;
-	while (stacks->b[0] > stacks->a[1])
+/*	if (stacks->len < 150)
 	{
-		ft_interpret(stacks, "ra");
-		write(1, "ra\n", 3);
-		ra++;
-	}
-	ft_interpret(stacks, "pa");
-	write(1, "pa\n", 3);
-	while (ra > 0)
-	{
-		if (stacks->a[0] > stacks->a[1])
+		ra = 0;
+		while (stacks->b[0] > stacks->a[1])
 		{
-			ft_interpret(stacks, "sa");
-			write(1, "sa\n", 3);
+			ft_interpret(stacks, "ra");
+			write(1, "ra\n", 3);
+			ra++;
 		}
-		ft_interpret(stacks, "rra");
-		write(1, "rra\n", 4);
-		ra--;
+		ft_interpret(stacks, "pa");
+		write(1, "pa\n", 3);
+		while (ra > 0)
+		{
+			if (stacks->a[0] > stacks->a[1])
+			{
+				ft_interpret(stacks, "sa");
+				write(1, "sa\n", 3);
+			}
+			ft_interpret(stacks, "rra");
+			write(1, "rra\n", 4);
+			ra--;
+		}
 	}
+	else
+	{*/
+		ft_interpret(stacks, "pa");
+		write(1, "pa\n", 3);
+//	}
 	*pivot = stacks->b[ft_find_pivot(stacks->b, stacks->eb - 1)];
 }
 
@@ -77,6 +85,7 @@ void			ft_quick_sort_b(t_que *stacks)
 {
 	int			pivot;
 
+	stacks->padding++;
 	pivot = stacks->b[ft_find_pivot(stacks->b, stacks->eb - 1)];
 	while (ft_b_non_sorted(stacks) == -1)
 	{
