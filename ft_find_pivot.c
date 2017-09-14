@@ -6,7 +6,7 @@
 /*   By: amacieje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/09 15:11:04 by amacieje          #+#    #+#             */
-/*   Updated: 2017/09/14 11:24:29 by amacieje         ###   ########.fr       */
+/*   Updated: 2017/09/14 11:51:13 by amacieje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int				ft_find_pivot(t_que *stacks, int *tab, int end, int i)
 	int			k;
 	int			less;
 
-	scores = (int *)malloc(sizeof(int) * (end + 1));
+	if (!(scores = (int *)malloc(sizeof(int) * (end + 1))))
+		exit(-1);
 	while (++i <= end)
 	{
 		k = -1;
