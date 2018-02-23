@@ -28,5 +28,5 @@ If you need other fonctions, you have to make them from scratch.
 
 <p align=center><img src="http://gdurl.com/YQZ0" alt="game rules screenshot"></p>
 
-Full subject and how to use : <a target="_blank" href="http://gdurl.com/r7QT/download">HERE</a>.
+Full subject and how to use : <a target="_blank" href="http://gdurl.com/r7QT/download">HERE</a>.<br>
 French version : <a target="_blank" href="https://cdn.intra.42.fr/pdf/pdf/650/push_swap.fr.pdf">HERE</a>.
